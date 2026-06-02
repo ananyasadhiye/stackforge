@@ -1,9 +1,20 @@
 {
   "buildCommand": "vite build",
-  "outputDirectory": "dist/server",
   "installCommand": "npm install",
   "framework": null,
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/server.js" }
+  "functions": {
+    "dist/server/server.js": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/dist/client/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/dist/server/server.js"
+    }
   ]
 }
