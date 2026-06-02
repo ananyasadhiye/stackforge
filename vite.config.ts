@@ -8,12 +8,7 @@ export default defineConfig({
   plugins: [
     tsConfigPaths(),
     tailwindcss(),
-    tanstackStart({
-      server: {
-        entry: "server",
-        preset: "vercel-edge",
-      },
-    }),
+    tanstackStart({ server: { entry: "server" } }),
     viteReact(),
   ],
   server: { port: 5173, host: true },
